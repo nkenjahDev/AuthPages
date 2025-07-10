@@ -1,0 +1,13 @@
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+}
+.card {
+  border-radius: 1rem;
+}
+#google-login img {
+  vertical-align: middle;
+}
+#togglePassword {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
