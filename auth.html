@@ -1,13 +1,12 @@
+<!-- This file will be the Login page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Authentication</title>
-  <!-- Bootstrap 5.3 CSS -->
+  <title>Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body class="bg-auth">
@@ -15,14 +14,14 @@
     <div class="card shadow-lg p-4 auth-card">
       <div class="text-center mb-4">
         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User Icon" class="mb-2" style="width: 60px;">
-        <h2 id="auth-title">Sign In</h2>
-        <p class="text-muted" id="auth-subtitle">Welcome back! Please login to your account.</p>
+        <h2>Sign In</h2>
+        <p class="text-muted">Welcome back! Please login to your account.</p>
       </div>
-      <!-- Login Form -->
-      <form id="login-form" class="auth-form">
+      <form id="login-form" class="auth-form" novalidate>
         <div class="mb-3">
           <label for="login-email" class="form-label">Email address</label>
           <input type="email" class="form-control" id="login-email" required autocomplete="username">
+          <div class="invalid-feedback">Please enter a valid email address.</div>
         </div>
         <div class="mb-3 position-relative">
           <label for="login-password" class="form-label">Password</label>
@@ -31,6 +30,7 @@
             <button class="btn btn-outline-secondary" type="button" id="toggleLoginPassword" tabindex="-1">
               <span id="toggleLoginPasswordIcon" class="bi bi-eye"></span>
             </button>
+            <div class="invalid-feedback">Password is required.</div>
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -38,7 +38,7 @@
             <input type="checkbox" id="remember-me" class="form-check-input">
             <label for="remember-me" class="form-check-label small">Remember me</label>
           </div>
-          <a href="#" id="show-forgot">Forgot password?</a>
+          <a href="forgot.html">Forgot password?</a>
         </div>
         <button type="submit" class="btn btn-primary w-100 mb-2">Login</button>
         <div class="text-center my-2">or</div>
@@ -46,82 +46,12 @@
           <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" style="width:20px; margin-right:8px;"> Sign in with Google
         </button>
         <div class="text-center mt-3">
-          <span>Don't have an account? <a href="#" id="show-register">Register</a></span>
-        </div>
-      </form>
-      <!-- Register Form -->
-      <form id="register-form" class="auth-form d-none">
-        <div class="mb-3">
-          <label for="register-email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="register-email" required autocomplete="username">
-        </div>
-        <div class="mb-3">
-          <label for="register-username" class="form-label">Username</label>
-          <input type="text" class="form-control" id="register-username" required autocomplete="name">
-        </div>
-        <div class="mb-3 position-relative">
-          <label for="register-password" class="form-label">Password</label>
-          <div class="input-group">
-            <input type="password" class="form-control" id="register-password" required autocomplete="new-password">
-            <button class="btn btn-outline-secondary" type="button" id="toggleRegisterPassword" tabindex="-1">
-              <span id="toggleRegisterPasswordIcon" class="bi bi-eye"></span>
-            </button>
-          </div>
-        </div>
-        <div class="mb-3 position-relative">
-          <label for="register-confirm-password" class="form-label">Confirm Password</label>
-          <div class="input-group">
-            <input type="password" class="form-control" id="register-confirm-password" required autocomplete="new-password">
-            <button class="btn btn-outline-secondary" type="button" id="toggleRegisterConfirmPassword" tabindex="-1">
-              <span id="toggleRegisterConfirmPasswordIcon" class="bi bi-eye"></span>
-            </button>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-success w-100 mb-2">Register</button>
-        <div class="text-center mt-3">
-          <span>Already have an account? <a href="#" id="show-login">Login</a></span>
-        </div>
-      </form>
-      <!-- Forgot Password Form -->
-      <form id="forgot-form" class="auth-form d-none">
-        <div class="mb-3">
-          <label for="forgot-email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="forgot-email" required autocomplete="username">
-        </div>
-        <button type="submit" class="btn btn-warning w-100 mb-2">Send Reset Link</button>
-        <div class="text-center mt-3">
-          <span>Remembered your password? <a href="#" id="show-login-2">Login</a></span>
-        </div>
-      </form>
-      <!-- Reset Password Form -->
-      <form id="reset-form" class="auth-form d-none">
-        <div class="mb-3 position-relative">
-          <label for="reset-password" class="form-label">New Password</label>
-          <div class="input-group">
-            <input type="password" class="form-control" id="reset-password" required autocomplete="new-password">
-            <button class="btn btn-outline-secondary" type="button" id="toggleResetPassword" tabindex="-1">
-              <span id="toggleResetPasswordIcon" class="bi bi-eye"></span>
-            </button>
-          </div>
-        </div>
-        <div class="mb-3 position-relative">
-          <label for="reset-confirm-password" class="form-label">Confirm New Password</label>
-          <div class="input-group">
-            <input type="password" class="form-control" id="reset-confirm-password" required autocomplete="new-password">
-            <button class="btn btn-outline-secondary" type="button" id="toggleResetConfirmPassword" tabindex="-1">
-              <span id="toggleResetConfirmPasswordIcon" class="bi bi-eye"></span>
-            </button>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-info w-100 mb-2">Reset Password</button>
-        <div class="text-center mt-3">
-          <span>Back to <a href="#" id="show-login-3">Login</a></span>
+          <span>Don't have an account? <a href="register.html">Register</a></span>
         </div>
       </form>
     </div>
   </div>
-  <!-- Bootstrap 5.3 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="auth.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>
