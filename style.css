@@ -1,13 +1,45 @@
-body {
-  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+body.bg-auth {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+  min-height: 100vh;
 }
-.card {
-  border-radius: 1rem;
+.auth-card {
+  border-radius: 1.5rem;
+  max-width: 420px;
+  width: 100%;
+  background: #fff;
+  border: none;
 }
-#google-login img {
+.auth-form .form-label {
+  font-weight: 500;
+}
+.auth-form .form-control {
+  border-radius: 0.5rem;
+  min-height: 44px;
+}
+.auth-form .input-group .btn {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.auth-form .btn {
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 0.7rem 0;
+  border-radius: 0.5rem;
+}
+.auth-form .btn img {
   vertical-align: middle;
 }
-#togglePassword {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+.auth-form .form-check-input {
+  margin-top: 0.2rem;
+}
+.auth-form a {
+  text-decoration: none;
+  color: #6366f1;
+  font-weight: 500;
+}
+.auth-form a:hover {
+  text-decoration: underline;
+  color: #4338ca;
+}
+.auth-form .text-center span {
+  font-size: 0.97rem;
 }
